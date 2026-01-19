@@ -7,12 +7,12 @@ PREFIX_FOLDERS = {
 }
 
 EXTENSIONS_FOLDERS = {
-    ".jpg": "IMAGEM/",
-    ".png": "IMAGEM/",
+    ".jpg": "Imagem/",
+    ".png": "Imagem/",
     ".gif": "GIF/",
-    ".mp4": "VIDEO/",
-    ".mkv": "VIDEO/",
-    ".wmv": "VIDEO/",
-    ".mp3": "AUDIO/",
-    ".wav": "AUDIO/"
+    ".mp4": "Video/",
+    ".mkv": "Video/",
+    ".wmv": "Video/",
+    ".mp3": "Audio/",
+    ".wav": "Audio/"
 }
