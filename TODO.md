@@ -4,4 +4,3 @@
 - adicionar logs de erros
 - tentar rodar em segundo plano (preferencialmente docker se possivel)
 - achar home do usuario dinamicamente (windows/linux/mac)
-- verificar estrutura do config.json (se estiver faltando algo, dar opção de resetar para o default ou editar manualmente)
