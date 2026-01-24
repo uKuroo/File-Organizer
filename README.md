@@ -9,33 +9,49 @@ Paiton is a file monitoring application that observes a specified folder for new
 ``` plaintext
 paiton
 ├── src
-│   ├── Main.py          # Main logic for monitoring and moving files
-│   ├── Config.py        # Configuration constants for folder paths and file types
-│   └── setup.py         # Script for setting up configuration with folder picker
-├── requirements.txt      # List of dependencies for the project
-└── README.md             # Documentation for the project
+│   ├── main.py          # Main application logic
+│   ├── config/
+│   │   ├── config.json  # Configuration file (auto-generated)
+│   │   ├── data.py      # Configuration data structures
+│   │   └── setup.py     # Configuration management and validation
+│   └── log/             # Application logs
+└── README.md            # Project documentation
 ```
 
 ## Installation
 
 1. Clone the repository to your local machine.
 2. Navigate to the project directory.
-3. Install the required dependencies using the following command:
+3. Run the application:
 
    ``` bash
-   pip install -r requirements.txt
+   python src/main.py
+   or
+   python3 src/main.py
    ```
 
 ## Configuration
 
-Before running the application, you need to set up the observable and destination folders. You can do this by running the `setup.py` script, which will prompt you to select the folders using a graphical folder picker dialog.
+The application uses a JSON configuration file located at `src/config/config.json`.
+
+On the first run, if the configuration file is missing, the application will automatically create a default one with sample paths. You should edit `src/config/config.json` to set your desired:
+
+- **OBSERVED_FOLDER**: The directory to monitor for new files.
+- **BASE_EXTENSION_FOLDER**: The root directory where organized files will be moved.
+- **PREFIX_FOLDERS**: Rules for organizing files by name prefix
+  - (the prefix will be separated by an underscore, ex: `PREFIX_FOLDERS = {"INF": "Informatica/"}` will move files like `INF_123.pdf` to `Informatica/123.pdf`).
+- **EXTENSIONS_FOLDERS**: Rules for organizing files by extension.
+
+The application validates the configuration structure on startup. If required fields are missing, it will ask if you want to reset to defaults or edit manually.
 
 ## Usage
 
-To start monitoring the specified folder, run the `Main.py` script:
+To start monitoring the specified folder, run the `main.py` script:
 
 ``` bash
-python src/Main.py
+python src/main.py
+or
+python3 src/main.py
 ```
 
 The application will continuously check for new files in the observable folder and move them to the appropriate destination based on their prefixes and extensions.
