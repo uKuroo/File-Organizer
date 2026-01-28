@@ -1,8 +1,8 @@
-# Paiton Project
+# File Organizer Project
 
 ## Overview
 
-Paiton is a file monitoring application that observes a specified folder for new files and organizes them into designated folders based on their prefixes and extensions. The application is designed to automate the process of file management, making it easier to keep track of files.
+A file monitoring application that observes a specified folder for new files and organizes them into designated folders based on their prefixes and extensions. The application is designed to automate the process of file management, making it easier to keep track of files.
 
 ## Project Structure
 
